@@ -1,0 +1,16 @@
+C:\Users\Acer\source\repos\CompanyMas\bin\Debug\netcoreapp3.1\CompanyMas.exe
+C:\Users\Acer\source\repos\CompanyMas\bin\Debug\netcoreapp3.1\CompanyMas.deps.json
+C:\Users\Acer\source\repos\CompanyMas\bin\Debug\netcoreapp3.1\CompanyMas.runtimeconfig.json
+C:\Users\Acer\source\repos\CompanyMas\bin\Debug\netcoreapp3.1\CompanyMas.runtimeconfig.dev.json
+C:\Users\Acer\source\repos\CompanyMas\bin\Debug\netcoreapp3.1\CompanyMas.dll
+C:\Users\Acer\source\repos\CompanyMas\bin\Debug\netcoreapp3.1\CompanyMas.pdb
+C:\Users\Acer\source\repos\CompanyMas\bin\Debug\netcoreapp3.1\CsvHelper.dll
+C:\Users\Acer\source\repos\CompanyMas\obj\Debug\netcoreapp3.1\CompanyMas.csproj.AssemblyReference.cache
+C:\Users\Acer\source\repos\CompanyMas\obj\Debug\netcoreapp3.1\CompanyMas.AssemblyInfoInputs.cache
+C:\Users\Acer\source\repos\CompanyMas\obj\Debug\netcoreapp3.1\CompanyMas.AssemblyInfo.cs
+C:\Users\Acer\source\repos\CompanyMas\obj\Debug\netcoreapp3.1\CompanyMas.csproj.CoreCompileInputs.cache
+C:\Users\Acer\source\repos\CompanyMas\obj\Debug\netcoreapp3.1\CompanyMas.csproj.CopyComplete
+C:\Users\Acer\source\repos\CompanyMas\obj\Debug\netcoreapp3.1\CompanyMas.dll
+C:\Users\Acer\source\repos\CompanyMas\obj\Debug\netcoreapp3.1\CompanyMas.pdb
+C:\Users\Acer\source\repos\CompanyMas\obj\Debug\netcoreapp3.1\CompanyMas.genruntimeconfig.cache
+C:\Users\Acer\source\repos\CompanyMas\bin\Debug\netcoreapp3.1\ConsoleTables.dll
