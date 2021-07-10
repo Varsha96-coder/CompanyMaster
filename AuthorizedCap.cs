@@ -8,7 +8,7 @@ namespace CompanyMas
 {
     class AuthorizedCap
     {
-        /*static void Main(string[] args)
+        static void Main(string[] args)
         {
 
             int c1 = 0,c2 = 0,c3 = 0,c4 = 0,c5 = 0;
@@ -35,6 +35,6 @@ namespace CompanyMas
             table.Write();
             Console.WriteLine();
             Console.ReadKey();
-        }*/
+        }
     }
 }

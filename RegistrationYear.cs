@@ -10,7 +10,7 @@ namespace CompanyMas
 {
     class RegistrationYear
     {
-       /* static void Main(string[] args)
+        static void Main(string[] args)
         {
             string yr = "";
             int year, c = 0;
@@ -58,6 +58,6 @@ namespace CompanyMas
             }
             table.Write();
             Console.WriteLine();
-        }*/
+        }
     }
 }
