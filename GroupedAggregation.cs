@@ -20,7 +20,10 @@ namespace CompanyMas
             var rows = new CsvReader(reader, CultureInfo.InvariantCulture);
           
             var DOR = new Dictionary<string, Dictionary<string, int>>();
-                
+            for(int i = 2000; i <= 2019; i++)
+            {
+                DOR.Add(i.ToString(), new Dictionary<string, int>());
+            }   
                 foreach (var row in rows.GetRecords<Maharashtra>())
                 {
                     string dateString = row.DATE_OF_REGISTRATION;
@@ -50,13 +53,7 @@ namespace CompanyMas
                                     DOR[year.ToString()][activity]++;
                                 else
                                     DOR[year.ToString()].Add(activity,1);
-                            }
-                            else
-                            {
-                                DOR.Add(year.ToString(), new Dictionary<string, int>());
-                                DOR[year.ToString()].Add(row.PRINCIPAL_BUSINESS_ACTIVITY_AS_PER_CIN, 1);
-                            }  
-
+                            }                         
                         }
                     }
                 }
