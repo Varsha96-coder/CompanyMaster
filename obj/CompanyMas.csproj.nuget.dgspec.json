@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Acer\\Desktop\\CompanyMaster\\CompanyMas.csproj": {}
+    "c:\\Users\\Acer\\Desktop\\CompanyMaster\\CompanyMas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Acer\\Desktop\\CompanyMaster\\CompanyMas.csproj": {
+    "c:\\Users\\Acer\\Desktop\\CompanyMaster\\CompanyMas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Acer\\Desktop\\CompanyMaster\\CompanyMas.csproj",
+        "projectUniqueName": "c:\\Users\\Acer\\Desktop\\CompanyMaster\\CompanyMas.csproj",
         "projectName": "CompanyMas",
-        "projectPath": "C:\\Users\\Acer\\Desktop\\CompanyMaster\\CompanyMas.csproj",
+        "projectPath": "c:\\Users\\Acer\\Desktop\\CompanyMaster\\CompanyMas.csproj",
         "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Acer\\Desktop\\CompanyMaster\\obj\\",
+        "outputPath": "c:\\Users\\Acer\\Desktop\\CompanyMaster\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "c/xTyI9gY2jwMPhokRC4Iaq88bZ5nM+2Ur4/T4/7oBzhpXnrJ8SiZmrEm9W/l7wV/SHXKHA0tOeMTzhmBvSu1g==",
+  "dgSpecHash": "QYA0W2RZco7TRcr+s3LyKJkbYDtORcuOeJPAyU8bmmL0zHQXCNfQHD5OCbIbmzzoeIweQq2ujEwcvmF5ZlRkMQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Acer\\Desktop\\CompanyMaster\\CompanyMas.csproj",
+  "projectFilePath": "c:\\Users\\Acer\\Desktop\\CompanyMaster\\CompanyMas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Acer\\.nuget\\packages\\consoletables\\2.4.2\\consoletables.2.4.2.nupkg.sha512",
     "C:\\Users\\Acer\\.nuget\\packages\\csvhelper\\27.1.1\\csvhelper.27.1.1.nupkg.sha512",
