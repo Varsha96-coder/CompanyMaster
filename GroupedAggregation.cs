@@ -21,7 +21,7 @@ namespace CompanyMas
             var rows = new CsvReader(reader, CultureInfo.InvariantCulture);
           
             var DOR = new Dictionary<string, Dictionary<string, int>>();
-            for(int i = 2000; i <= 2019; i++)
+            for(int i = 2000 ; i <= 2019 ; i++)
             {
                 DOR.Add(i.ToString(), new Dictionary<string, int>());
             }   

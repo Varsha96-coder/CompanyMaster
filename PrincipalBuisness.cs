@@ -43,14 +43,15 @@ namespace CompanyMas
                     {
                         string activity = row.PRINCIPAL_BUSINESS_ACTIVITY_AS_PER_CIN;
                         if (DOR.ContainsKey(activity))
-                            DOR[activity]++;
+                            DOR[ activity ]++;
                         else
-                            DOR.Add(activity, 1);
+                            DOR.Add( activity  , 1);
                     }
                 }
             }
-            var table = new ConsoleTable("PRINCIPAL BUISNESS ACTIVITY(2015)", "Count");
-            foreach(KeyValuePair<String,int> kvp in DOR)
+
+            var table = new ConsoleTable( "PRINCIPAL BUISNESS ACTIVITY(2015)" , "Count" );
+            foreach( KeyValuePair<String,int> kvp in DOR )
             {
                 table.AddRow(kvp.Key, kvp.Value);
             }
