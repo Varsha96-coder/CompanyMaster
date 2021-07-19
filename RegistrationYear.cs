@@ -14,7 +14,7 @@ namespace CompanyMas
         static void Main2(string[] args)
         {
             string yr = "";
-            int year, c = 0;
+            int year = 0;
             string path = @"C:\Users\Acer\Downloads\Maharashtra.csv";
             var reader = new StreamReader(path);
             var rows = new CsvReader(reader, CultureInfo.InvariantCulture);
@@ -30,7 +30,6 @@ namespace CompanyMas
                 if (dateString != "NA")
                 {
                     yr = dateString.Substring(6);
-                    c++;
                     if(yr.Length == 2)
                     {
                         int ch = Convert.ToInt32(yr);
