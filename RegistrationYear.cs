@@ -51,7 +51,7 @@ namespace CompanyMas
                 }
             }
             var table = new ConsoleTable("Year", "No of Registrations");
-            for(int i = 1870; i <= 2021; i++)
+            for(int i = 2000; i <= 2021; i++)
             {
                 table.AddRow(i, DOR[i.ToString()]);
             }
