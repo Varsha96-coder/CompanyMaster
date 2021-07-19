@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using CsvHelper;
 using System.Globalization;
 using ConsoleTables;
+
+
 namespace CompanyMas
 {
     class AuthorizedCap
@@ -11,7 +13,7 @@ namespace CompanyMas
         static void Main(string[] args)
         {
 
-            int c1 = 0,c2 = 0,c3 = 0,c4 = 0,c5 = 0;
+            int c1 = 0, c2 = 0, c3 = 0, c4 = 0, c5 = 0;
             string path = @"C:\Users\Acer\Downloads\Maharashtra.csv";
             var reader = new StreamReader(path);
             var rows = new CsvReader(reader, CultureInfo.InvariantCulture);
@@ -31,7 +33,11 @@ namespace CompanyMas
             }
 
             var table = new ConsoleTable("Bin", "Counts");
-            table.AddRow("<= 1L", c1).AddRow("1L to 10L", c2).AddRow("10L to 1Cr", c3).AddRow("1Cr to 10Cr", c4).AddRow(">10Cr", c5);
+            table.AddRow("<= 1L", c1)
+                .AddRow("1L to 10L", c2)
+                .AddRow("10L to 1Cr", c3)
+                .AddRow("1Cr to 10Cr", c4)
+                .AddRow(">10Cr", c5);
             table.Write();
             Console.WriteLine();
             Console.ReadKey();

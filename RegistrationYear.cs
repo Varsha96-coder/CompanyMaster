@@ -6,11 +6,12 @@ using CsvHelper;
 using System.Globalization;
 using ConsoleTables;
 
+
 namespace CompanyMas
 {
     class RegistrationYear
     {
-       static void Main(string[] args)
+        static void Main2(string[] args)
         {
             string yr = "";
             int year, c = 0;
@@ -19,7 +20,7 @@ namespace CompanyMas
             var rows = new CsvReader(reader, CultureInfo.InvariantCulture);
 
             Dictionary<string, int> DOR = new Dictionary<string, int>();
-            for(int i = 1870; i <= 2021; i++)
+            for(int i = 2000; i <= 2021; i++)
             {
                 DOR[i.ToString()] = 0;
             }
@@ -35,8 +36,6 @@ namespace CompanyMas
                         int ch = Convert.ToInt32(yr);
                         if (ch >= 00 && ch <= 21)
                             yr = "20" + yr;
-                        else
-                            yr = "19" + yr;
                         year = Convert.ToInt32(yr);                   
                     }
                     else
@@ -44,8 +43,8 @@ namespace CompanyMas
                         DateTime dt = Convert.ToDateTime(dateString);
                         year = dt.Year;
                     }
-                    //Console.WriteLine(year);
-                    if (year >= 1870 && year <= 2021)
+                    
+                    if (year >= 2000 && year <= 2021)
                     {
                         DOR[year.ToString()]++;
                     }
