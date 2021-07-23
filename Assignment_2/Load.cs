@@ -50,6 +50,7 @@ namespace AdoSql
                     {
                         Console.WriteLine("Table does not exist");
                         exists.Close();
+
                         sqlquery = "USE Maharashtra "
                         + "CREATE TABLE CompanyMasters("
                         + " CORPORATE_IDENTIFICATION_NUMBER varchar(40) not null, "
@@ -60,6 +61,7 @@ namespace AdoSql
                         + " Primary Key(CORPORATE_IDENTIFICATION_NUMBER))";
                         sqlcomm = new SqlCommand(sqlquery, myConn);
                         sqlcomm.ExecuteNonQuery();
+
                         Console.WriteLine("Table created");
                     }
                 }
@@ -67,10 +69,13 @@ namespace AdoSql
                 {
                     exists.Close();
                     Console.WriteLine("Database not exist");
+
                     sqlquery = "CREATE DATABASE Maharashtra";
                     sqlcomm = new SqlCommand(sqlquery, myConn);
                     sqlcomm.ExecuteNonQuery();
+
                     Console.WriteLine("Database created");
+
                     sqlquery = "USE Maharashtra "
                         + "CREATE TABLE CompanyMasters("
                         + " CORPORATE_IDENTIFICATION_NUMBER varchar(40) not null, "
@@ -81,6 +86,7 @@ namespace AdoSql
                         + " Primary Key(CORPORATE_IDENTIFICATION_NUMBER))";
                     sqlcomm = new SqlCommand(sqlquery, myConn);
                     sqlcomm.ExecuteNonQuery();
+
                     Console.WriteLine("Table created");
                 }
 
@@ -101,7 +107,6 @@ namespace AdoSql
                         sqlcomm.ExecuteNonQuery();
                         Console.WriteLine("values inserted");
                     }
-
                 }
                 myConn.Close();
             }

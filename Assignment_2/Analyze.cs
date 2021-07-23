@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ConsoleTables;
 
+
 namespace AdoSql
 {
     public class Analyze
@@ -25,6 +26,7 @@ namespace AdoSql
                 SqlDataReader rdr;
                 int ch;
                 bool f = true;
+
                 while(f)
                 {
                     Console.WriteLine("Choose the cases:\nCase 1 \nCase 2 \nCase 3 \nCase 4 \ndefault->exit");
@@ -34,47 +36,50 @@ namespace AdoSql
                         case 1:
                             //testcase 1
                             Console.WriteLine("****************************************************First TestCase****************************************************");
+                            string C1 = "", C2 = "", C3 = "", C4 = "", C5 = "";
 
-                            sqlquery = "select COUNT(AUTHORIZED_CAP) FROM Maharashtra.dbo.CompanyMasters WHERE  AUTHORIZED_CAP <= 100000;";
+                            sqlquery = " SELECT COUNT(CASE WHEN AUTHORIZED_CAP <= 100000 THEN 1 END) AS COUNT_1,"
+                                    + " COUNT(CASE WHEN AUTHORIZED_CAP > 100000 AND AUTHORIZED_CAP <= 1000000 THEN 1 END) AS COUNT_2,"
+                                    + " COUNT(CASE WHEN AUTHORIZED_CAP > 1000000 AND AUTHORIZED_CAP <= 10000000 THEN 1 END) AS COUNT_3,"
+                                    + " COUNT(CASE WHEN AUTHORIZED_CAP > 10000000 AND AUTHORIZED_CAP <= 100000000 THEN 1 END) AS COUNT_4,"
+                                    + " COUNT(CASE WHEN AUTHORIZED_CAP > 100000000 THEN 1 END) AS COUNT_5"
+                                    + " FROM Maharashtra.dbo.CompanyMasters; ";
                             sqlcomm = new SqlCommand(sqlquery, myConn);
-                            int c1 = (int)sqlcomm.ExecuteScalar();
+                            rdr = sqlcomm.ExecuteReader();
 
-                            sqlquery = "select COUNT(AUTHORIZED_CAP) FROM Maharashtra.dbo.CompanyMasters WHERE  AUTHORIZED_CAP > 100000 AND AUTHORIZED_CAP <= 1000000;";
-                            sqlcomm = new SqlCommand(sqlquery, myConn);
-                            int c2 = (int)sqlcomm.ExecuteScalar();
-
-                            sqlquery = "select COUNT(AUTHORIZED_CAP) FROM Maharashtra.dbo.CompanyMasters WHERE  AUTHORIZED_CAP > 1000000 AND AUTHORIZED_CAP <= 10000000;";
-                            sqlcomm = new SqlCommand(sqlquery, myConn);
-                            int c3 = (int)sqlcomm.ExecuteScalar();
-
-                            sqlquery = "select COUNT(AUTHORIZED_CAP) FROM Maharashtra.dbo.CompanyMasters WHERE  AUTHORIZED_CAP > 10000000 AND AUTHORIZED_CAP <= 100000000;";
-                            sqlcomm = new SqlCommand(sqlquery, myConn);
-                            int c4 = (int)sqlcomm.ExecuteScalar();
-
-                            sqlquery = "select COUNT(AUTHORIZED_CAP) FROM Maharashtra.dbo.CompanyMasters WHERE  AUTHORIZED_CAP > 100000000;";
-                            sqlcomm = new SqlCommand(sqlquery, myConn);
-                            int c5 = (int)sqlcomm.ExecuteScalar();
-
+                            while (rdr.Read())
+                            {
+                                C1 = rdr["COUNT_1"].ToString();
+                                C2 = rdr["COUNT_2"].ToString();
+                                C3 = rdr["COUNT_3"].ToString();
+                                C4 = rdr["COUNT_4"].ToString();
+                                C5 = rdr["COUNT_5"].ToString();
+                            }                                           
+                            
                             var table = new ConsoleTable("Bin", "Counts");
-                            table.AddRow("<= 1L", c1)
-                                .AddRow("1L to 10L", c2)
-                                .AddRow("10L to 1Cr", c3)
-                                .AddRow("1Cr to 10Cr", c4)
-                                .AddRow(">10Cr", c5);
+                            table.AddRow("<= 1L", C1)
+                                .AddRow("1L to 10L", C2)
+                                .AddRow("10L to 1Cr", C3)
+                                .AddRow("1Cr to 10Cr", C4)
+                                .AddRow(">10Cr", C5);
                             table.Write();
+
                             Console.WriteLine();
+                            rdr.Close();
                             f = true;
                             break;
+
                         case 2:
                             //testcase 2
                             Console.WriteLine("****************************************************Second TestCase****************************************************");
 
                             var table2 = new ConsoleTable("year", "No of Registrations");
+
                             sqlquery = "SELECT YEAR, COUNT(YEAR) 'COUNT' FROM Maharashtra.dbo.CompanyMasters"
                                 + " WHERE YEAR >= 2000 AND YEAR <= 2019 GROUP BY YEAR ORDER BY YEAR;";
                             sqlcomm = new SqlCommand(sqlquery, myConn);
                             rdr = sqlcomm.ExecuteReader();
-                            Console.WriteLine("//////////");
+                           
                             while (rdr.Read())
                             {
                                 string YEAR = rdr["YEAR"].ToString();
@@ -82,20 +87,24 @@ namespace AdoSql
                                 table2.AddRow(YEAR, COUNT);
                             }
                             table2.Write();
+
                             Console.WriteLine();                     
                             rdr.Close();
                             f = true;
                             break;
+
                         case 3:
                             //testcase 3
                             Console.WriteLine("****************************************************Third TestCase****************************************************");
 
                             var table3 = new ConsoleTable("PRINCIPAL_BUSINESS_ACTIVITY_AS_PER_CIN(2015)", "counts");
+
                             sqlquery = "SELECT PRINCIPAL_BUSINESS_ACTIVITY_AS_PER_CIN,"
                                 + " COUNT(PRINCIPAL_BUSINESS_ACTIVITY_AS_PER_CIN) 'COUNT' FROM Maharashtra.dbo.CompanyMasters"
                                 + " WHERE YEAR = 2015 GROUP BY PRINCIPAL_BUSINESS_ACTIVITY_AS_PER_CIN;";
                             sqlcomm = new SqlCommand(sqlquery, myConn);
                             rdr = sqlcomm.ExecuteReader();
+
                             while (rdr.Read())
                             {
                                 string business = rdr["PRINCIPAL_BUSINESS_ACTIVITY_AS_PER_CIN"].ToString();
@@ -103,10 +112,12 @@ namespace AdoSql
                                 table3.AddRow(business, count);
                             }
                             table3.Write();
+
                             Console.WriteLine();                           
                             rdr.Close();
                             f = true;
                             break;
+
                         case 4:
                             //testcase 4
                             Console.WriteLine("****************************************************Fourth TestCase****************************************************");
@@ -140,6 +151,7 @@ namespace AdoSql
                                     }
                                 }
                             }
+
                             var table4 = new ConsoleTable("PRINCIPAL BUISNESS ACTIVITY", "Count");
                             foreach (var key1 in DOR.Keys)
                             {
@@ -151,15 +163,18 @@ namespace AdoSql
                                 }
                             }
                             table4.Write();
+
                             Console.WriteLine();                           
                             rdr.Close();
                             f = true;
                             break;
+
                         default:
                             f = false;
                             break;
                     }
                 }
+                Console.WriteLine("you exited");
                 Console.ReadKey();
             }
             catch (Exception e)
